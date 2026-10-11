@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b2a">
+  <meta name="description" content="Discover products and connect with local sellers through SokoLink Africa.">
+  <title>SokoLink Africa | Discover. Connect. Trade.</title>
+  <style>
+    :root {
+      --green: #123b2a;
+      --lime: #d9f36a;
+      --cream: #f8f7f0;
+      --muted: #66736b;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--green);
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      padding: 18px 5%;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand { font-size: 22px; font-weight: 800; }
+    .brand span { color: var(--lime); }
+    .tagline { font-size: 12px; color: #d5e2d9; margin-top: 4px; }
+
+    .hero {
+      padding: 48px 5% 38px;
+      background: var(--green);
+      color: white;
+      border-radius: 0 0 28px 28px;
+    }
+
+    .hero-inner, main, footer {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--lime);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.06;
+      max-width: 700px;
+      margin: 16px 0;
+    }
+
+    .hero p {
+      color: #e1eae4;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    .search {
+      display: flex;
+      gap: 8px;
+      margin-top: 25px;
+      max-width: 600px;
+    }
+
+    input, select {
+      min-width: 0;
+      padding: 13px;
+      border: 1px solid #d8dfd9;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    .search input { flex: 1; }
+
+    button, .contact {
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .search button {
+      background: var(--lime);
+      color: var(--green);
+    }
+
+    main { padding: 28px 5% 45px; }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 12px 0 18px;
+    }
+
+    h2 { margin: 0; font-size: 25px; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 7px; }
+
+    .categories {
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding: 4px 0 18px;
+    }
+
+    .category {
+      background: white;
+      color: var(--green);
+      border: 1px solid #e2e5dc;
+      white-space: nowrap;
+      padding: 10px 14px;
+      border-radius: 24px;
+    }
+
+    .category.active {
+      background: var(--green);
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e9e9df;
+      border-radius: 17px;
+      overflow: hidden;
+    }
+
+    .product-art {
+      min-height: 140px;
+      display: grid;
+      place-items: center;
+      background: #e9efdf;
+      font-size: 64px;
+    }
+
+    .details { padding: 16px; }
+    .pill {
+      font-size: 11px;
+      background: #edf4d8;
+      border-radius: 20px;
+      padding: 5px 8px;
+      display: inline-block;
+    }
+
+    .details h3 { margin: 12px 0 7px; font-size: 18px; }
+    .price { font-size: 19px; font-weight: bold; }
+    .location { color: var(--muted); font-size: 13px; margin: 8px 0 14px; }
+
+    .contact {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+
+    .empty {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    .seller {
+      background: #e8efd9;
+      padding: 25px;
+      margin-top: 32px;
+      border-radius: 18px;
+    }
+
+    .seller p { line-height: 1.6; }
+
+    footer {
+      padding: 24px 5%;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .search { flex-direction: column; }
+      .search button { width: 100%; }
+      .hero { padding-top: 35px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div>
+        <div class="brand">SokoLink <span>Africa</span></div>
+        <div class="tagline">Local sellers. Wider opportunities.</div>
+      </div>
+      <div aria-label="Africa">🌍</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Discover · Connect · Trade</div>
+      <h1>Find good products. Connect with real sellers.</h1>
+      <p>Explore products from local businesses and contact sellers directly. We're starting in Uganda, with a vision to connect businesses across Africa.</p>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search shoes, produce, clothes..." aria-label="Search products">
+        <button id="searchButton">Find products</button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-head">
+      <div>
+        <h2>Explore products</h2>
+        <div class="sub">Demo listings — sample products, not verified offers.</div>
+      </div>
+      <select id="sortSelect" aria-label="Sort products">
+        <option value="default">Recommended</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+      </select>
+    </div>
+
+    <div class="categories" id="categories">
+      <button class="category active" data-category="All">All products</button>
+      <button class="category" data-category="Fashion">Fashion</button>
+      <button class="category" data-category="Food">Food & farm</button>
+      <button class="category" data-category="Home">Home</button>
+      <button class="category" data-category="Other">Other</button>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+
+    <section class="seller">
+      <h2>Are you a seller?</h2>
+      <p>We're building a simple way for African businesses to showcase products and reach new customers. These are demo listings for now; seller registration will come in a later version.</p>
+      <strong>Our mission:</strong> make it easier for small businesses to get discovered.
+    </section>
+  </main>
+
+  <footer>
+    <strong>SokoLink Africa</strong><br>
+    An early-stage marketplace prototype. Sample listings are for demonstration only. Product availability, seller identities and prices must be confirmed directly with sellers. SokoLink does not process payments in this version.
+  </footer>
+
+  <script>
+    const products = [
+      { name: "Everyday Sneakers", category: "Fashion", price: 45000, location: "Kampala, Uganda", icon: "👟", phone: "" },
+      { name: "Fresh Farm Produce", category: "Food", price: 15000, location: "Mubende, Uganda", icon: "🥑", phone: "" },
+      { name: "African Print Fabric", category: "Fashion", price: 30000, location: "Kampala, Uganda", icon: "🧵", phone: "" },
+      { name: "Handmade Storage Basket", category: "Home", price: 25000, location: "Uganda", icon: "🧺", phone: "" },
+      { name: "Reusable Water Bottle", category: "Other", price: 12000, location: "Uganda", icon: "🧴", phone: "" },
+      { name: "Fresh Eggs — Sample Listing", category: "Food", price: 18000, location: "Uganda", icon: "🥚", phone: "" }
+    ];
+
+    let activeCategory = "All";
+    const grid = document.getElementById("productGrid");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+
+    function renderProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      let shown = products.filter(product => {
+        const matchesCategory = activeCategory === "All" || product.category === activeCategory;
+        const matchesSearch = (product.name + " " + product.category + " " + product.location).toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (sortSelect.value === "low") shown.sort((a, b) => a.price - b.price);
+      if (sortSelect.value === "high") shown.sort((a, b) => b.price - a.price);
+
+      if (!shown.length) {
+        grid.innerHTML = '<div class="empty">No matching products. Try another search or category.</div>';
+        return;
+      }
+
+      grid.innerHTML = shown.map(product => {
+        const message = encodeURIComponent("Hello, I saw " + product.name + " on SokoLink Africa. Is it available?");
+        const contactUrl = product.phone
+          ? "https://wa.me/" + product.phone.replace(/\D/g, "") + "?text=" + message
+          : "https://wa.me/?text=" + message;
+
+        return `
+          <article class="card">
+            <div class="product-art" aria-hidden="true">${product.icon}</div>
+            <div class="details">
+              <span class="pill">${product.category}</span>
+              <h3>${product.name}</h3>
+              <div class="price">UGX ${product.price.toLocaleString("en-UG")}</div>
+              <div class="location">📍 ${product.location}</div>
+              <a class="contact" href="${contactUrl}" target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    document.getElementById("searchButton").addEventListener("click", renderProducts);
+    searchInput.addEventListener("input", renderProducts);
+    sortSelect.addEventListener("change", renderProducts);
+
+    document.getElementById("categories").addEventListener("click", event => {
+      const button = event.target.closest("button[data-category]");
+      if (!button) return;
+
+      activeCategory = button.dataset.category;
+      document.querySelectorAll(".category").forEach(item => {
+        item.classList.toggle("active", item === button);
+      });
+      renderProducts();
+    });
+
+    renderProducts();
+  </script>
+</body>
+</html>
